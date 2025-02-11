@@ -8,4 +8,12 @@ void main() {
     test('Single number returns the number itself', () {
     expect(add('1'), equals(1));
   });
+    test('Multiple numbers return their sum', () {
+    expect(add('1,2,3'), equals(6));
+  });
+
+  test('Handles newlines between numbers', () {
+    expect(add('1\n2,3'), equals(6));
+  });
+
 }
