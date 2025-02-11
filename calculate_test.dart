@@ -19,5 +19,13 @@ void main() {
   test('Supports custom delimiters', () {
     expect(add('//;\n1;2'), equals(3));
   });
+  
+    test('Throws exception for negative numbers', () {
+    expect(() => add('1,-2,3'), throwsA(isA<FormatException>()));
+  });
+
+  test('Throws exception for multiple negative numbers', () {
+    expect(() => add('1,-2,-3'), throwsA(isA<FormatException>()));
+  });
 
 }
